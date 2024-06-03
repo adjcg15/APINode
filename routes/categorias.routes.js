@@ -1,14 +1,15 @@
 const router = require('express').Router()
 const categorias = require('../controllers/categorias.controller')
+const Authorize = require('../middlewares/auth.middleware')
 
-router.get('/', categorias.getAll)
+router.get('/', Authorize('Administrador'), categorias.getAll)
 
-router.get('/:id', categorias.get)
+router.get('/:id', Authorize('Administrador'), categorias.get)
 
-router.post('/', categorias.create)
+router.post('/', Authorize('Administrador'), categorias.create)
 
-router.put('/:id', categorias.update)
+router.put('/:id', Authorize('Administrador'), categorias.update)
 
-router.delete('/:id', categorias.delete)
+router.delete('/:id', Authorize('Administrador'), categorias.delete)
 
 module.exports = router

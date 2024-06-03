@@ -1,0 +1,43 @@
+GET http://localhost:3000/api/usuarios
+
+###
+
+GET http://localhost:3000/api/usuarios/adjcg15@gmail.com
+
+###
+
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "email": "juan@gmail.com",
+    "password": "hola",
+    "nombre": "Juan Pérez",
+    "rol": "Administrador"
+}
+
+###
+
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "email": "jval@gmail.com",
+    "password": "hola",
+    "nombre": "Juana Valencia",
+    "rol": "Usuario"
+}
+
+###
+
+PUT http://localhost:3000/api/usuarios/juan@gmail.com
+Content-Type: application/json
+
+{
+    "nombre": "Juan Pérez Pérez",
+    "rol": "Usuario"
+}
+
+###
+
+DELETE http://localhost:3000/api/usuarios/juan@gmail.com
